@@ -1,3 +1,10 @@
+# extragrade.py
+# This program reads in a student's percentage 
+# and prints out the corresponding grade 
+# while also rounding up a decimal 
+
+# Author: Rebecca Feeley
+
 import math
 
 percentage = float(input("Enter a percentage: "))
