@@ -8,7 +8,6 @@ numberToGuess = random.randint(0,100)
 guess = int(input("Please enter the number: "))
 
 while guess != numberToGuess:
-    print ("Wrong")
     if guess < numberToGuess:
         print ("Too low")
     else:
