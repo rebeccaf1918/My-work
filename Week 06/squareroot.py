@@ -1,24 +1,22 @@
 # Weekly task 06
 
 # Author: Rebecca Feeley
-
-def newton_sqrt(n, x):
-    n = float(input("Please enter a positive number: "))
-    x = float(input("Estimate your answer to square root of n: "))
-    while x == 1 or x == n:
-        sqrt = (0.5(x + (n/x))),
-        return (sqrt)
-    
-print (newton_sqrt(5, 3))
+# https://hackernoon.com/calculating-the-square-root-of-a-number-using-the-newton-raphson-method-a-how-to-guide-yr4e32zo
+# https://stackoverflow.com/questions/28733759/python-square-function-using-newtons-algorithm
 
 
- 
-# root = 0.5*(X + (N / X)) where X is any guess which can be assumed to be N or 1. 
-''' 
-n = float(input('What number would you like to squareroot?'))
-x = float(input('Estimate your answer'))
-final = (0.5*(x+(n/x)))
-print (final)
-for i in range(0,10):
-    final = (0.5*(final+(n/final)))
-    print (final)''' 
+number = float(input("Please enter a positive number: "))
+if number <= 1:
+    print ("You have not entered a positive number.")
+    number = float (input("Previous number was not positive. Please enter a positive number: "))
+
+def sqrt(number):
+    guess_sqrt = number / 2  #square root of number must be less than half of the value of original number 
+    newton_sqrt = ((guess_sqrt + (number/guess_sqrt)) * 0.5) #sqrt = (0.5(x + (n/x)))
+    while guess_sqrt != newton_sqrt:
+        guess_sqrt = newton_sqrt
+        newton_sqrt = ((guess_sqrt + number/guess_sqrt) * 0.5)
+    return guess_sqrt
+
+print (sqrt(number))
+
