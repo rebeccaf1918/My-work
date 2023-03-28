@@ -13,7 +13,8 @@ import sys
 def count_es(filename): # function to return the count of the frequency of 'e'
     with open (filename) as f: #file is opened in read mode
         text = f.read()  # the content of the file is assigned as a variable
-    return text.count('e') # I used the count() function of python here instead of a for loop.
+    return text.count('e') # this only counts occurances of lowercase 'e' as per assignment requirments
+    # I used the count() function of python here instead of a for loop.
     # while a for loop would also work, the built-in count() function is more efficent
     
 
@@ -22,3 +23,4 @@ filename = sys.argv[1] #argv is for showing all the arguments passed to the scri
 # So, argv[1] will get the second item, i.e mobydick.txt so that I can calculate the occurance of the letter 'e'
 print("The number of occurances of the letter 'e' is: " + str(count_es(filename)))
 # print a message for reader; result is converted to a string as it cannot be read as integer
+
