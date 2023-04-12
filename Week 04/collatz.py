@@ -6,17 +6,16 @@
 numbers = []
 number = int(input("Enter a positive integer: "))
 
-while number != 1:
-    numbers.append(number)
+def collatz(number):
     if (number % 2) == 0:
         number = (number // 2)
     elif (number % 2) == 1:
         number = (number * 3 + 1)
-    print (number)
-    
-      
+    return (number)
 
-      
-
-    
+while number != 1:
+    numbers.append(number)
+    number = collatz(number)
+numbers.append(number)    
+print (*numbers)  
 
